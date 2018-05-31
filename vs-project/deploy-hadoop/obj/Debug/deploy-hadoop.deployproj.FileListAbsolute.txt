@@ -1,0 +1,1 @@
+C:\D\workspace\hadoop\starkfell.github.io\arm-templates\deploy-hadoop\vs-project\deploy-hadoop\obj\Debug\deploy-hadoop.deployproj.CoreCompileInputs.cache
