@@ -129,8 +129,9 @@ yum install openssh-server -y
 # Installing expect.
 yum install expect -y
 
-# Downloading the Ambari repository file.
-wget -nv http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.4.2.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
+# Downloading the Ambari repository file. https://docs.hortonworks.com/HDPDocuments/Ambari-2.6.2.0/bk_ambari-installation/content/ambari_repositories.html
+#wget -nv http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.4.2.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
+wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.6.2.0/ambari.repo-O /etc/yum.repos.d/ambari.repo
 
 # Installing Ambari Server.
 yum install ambari-server -y
