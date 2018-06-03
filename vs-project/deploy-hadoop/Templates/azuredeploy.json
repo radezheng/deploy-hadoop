@@ -54,7 +54,7 @@
     },
     "ambariServerAdminPassword": {
       "type": "securestring",
-      "defaultValue": "Azurep@ssw0rd",
+      "defaultValue": "MyP@ssw0rd",
       "metadata": {
         "Description": "The Local Password of the account being created on the Ambari Server."
       }
@@ -163,7 +163,7 @@
     },
     "hadoopServerAdminPassword": {
       "type": "securestring",
-      "defaultValue": "Azurep@ssw0rd",
+      "defaultValue": "MyP@ssw0rd",
       "metadata": {
         "Description": "The Local Password of the account being created on the Hadoop Server Instance."
       }

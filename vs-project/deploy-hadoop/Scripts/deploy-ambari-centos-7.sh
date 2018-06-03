@@ -315,5 +315,11 @@ do
         ssh -o 'StrictHostKeyChecking no' root@$HOST /etc/init.d/network restart
 done
 
+#Resolve mysql issue
+yum install mysql-connector-java*
+ls -al /usr/share/java/mysql-connector-java.jar
+cd /var/lib/ambari-server/resources/
+ln -s /usr/share/java/mysql-connector-java.jar mysql-connector-java.jar
+
 echo "Ambari Server and DataNodes successfully prepped for deployment."
 
