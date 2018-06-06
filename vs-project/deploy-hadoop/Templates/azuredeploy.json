@@ -13,21 +13,21 @@
     },
     "primaryAddressPrefix": {
       "type": "string",
-      "defaultValue": "10.0.0.0/16",
+      "defaultValue": "10.1.0.0/16",
       "metadata": {
         "description": "Primary Address prefix."
       }
     },
     "subnetPrefix": {
       "type": "string",
-      "defaultValue": "10.0.1.0/24",
+      "defaultValue": "10.1.1.0/24",
       "metadata": {
         "description": "Subnet Prefix."
       }
     },
     "ambariServerNicIPAddress": {
       "type": "string",
-      "defaultValue": "10.0.1.4",
+      "defaultValue": "10.1.1.4",
       "metadata": {
         "description": "The Primary IP address of the new Ambari Server being deployed."
       }
@@ -54,7 +54,7 @@
     },
     "ambariServerAdminPassword": {
       "type": "securestring",
-      "defaultValue": "MyP@ssw0rd",
+      "defaultValue": "Myp@ssw0rd",
       "metadata": {
         "Description": "The Local Password of the account being created on the Ambari Server."
       }
@@ -116,10 +116,10 @@
       "defaultValue": "Standard_D2",
       "allowedValues": [
         "Standard_D2",
-        "Standard_A0",
+        "Standard_E64s_v3",
         "Standard_A1",
-        "Standard_DS1_v2",
-        "Standard_DS2_v2",
+        "Standard_E32s_v3",
+        "Standard_D2s_v3",
         "Standard_DS3_v2",
         "Standard_DS4_v2"
       ],
@@ -163,7 +163,7 @@
     },
     "hadoopServerAdminPassword": {
       "type": "securestring",
-      "defaultValue": "MyP@ssw0rd",
+      "defaultValue": "Myp@ssw0rd",
       "metadata": {
         "Description": "The Local Password of the account being created on the Hadoop Server Instance."
       }
@@ -220,14 +220,38 @@
         "description": "The Size of the Hadoop Server Instance Data Disk in GB."
       }
     },
+    "hadoopMasterDiskSize": {
+      "type": "int",
+      "defaultValue": 50,
+      "metadata": {
+        "description": "The Size of the Hadoop Server Instance Data Disk in GB."
+      }
+    },
+    "hadoopMasterVMSize": {
+      "type": "string",
+      "defaultValue": "Standard_D2",
+      "allowedValues": [
+        "Standard_D2",
+        "Standard_E64s_v3",
+        "Standard_A1",
+        "Standard_E32s_v3",
+        "Standard_DS2_v2",
+        "Standard_DS3_v2",
+        "Standard_DS4_v2"
+      ],
+      "metadata": {
+        "description": "The Size of the Hadoop Server Instance VM being deployed in Azure."
+      }
+    },
+
     "hadoopServerVMSize": {
       "type": "string",
       "defaultValue": "Standard_D2",
       "allowedValues": [
         "Standard_D2",
-        "Standard_A0",
+        "Standard_E64s_v3",
         "Standard_A1",
-        "Standard_DS1_v2",
+        "Standard_E32s_v3",
         "Standard_DS2_v2",
         "Standard_DS3_v2",
         "Standard_DS4_v2"
@@ -238,14 +262,14 @@
     },
     "deployAmbariServerScriptURI": {
       "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/radezheng/deploy-hadoop/master/vs-project/deploy-hadoop/Scripts/deploy-ambari-centos-6.8.sh",
+      "defaultValue": "https://raw.githubusercontent.com/radezheng/deploy-hadoop/master/vs-project/deploy-hadoop/Scripts/deploy-ambari-centos-7.sh",
       "metadata": {
         "description": "The URI of the Ambari Server Deployment Script."
       }
     },
     "deployAmbariServerScriptName": {
       "type": "string",
-      "defaultValue": "deploy-ambari-centos-6.8.sh",
+      "defaultValue": "deploy-ambari-centos-7.sh",
       "metadata": {
         "description": "The Name of the Ambari Server Deployment Script."
       }
@@ -427,10 +451,10 @@
             "value": "[parameters('hadoopServerImageVersion')]"
           },
           "hadoopServerDataDiskSize": {
-            "value": "[parameters('hadoopServerDataDiskSize')]"
+            "value": "[parameters('hadoopMasterDiskSize')]"
           },
           "hadoopServerVMSize": {
-            "value": "[parameters('hadoopServerVMSize')]"
+            "value": "[parameters('hadoopMasterVMSize')]"
           },
           "apiVersion": {
             "value": "[parameters('apiVersion')]"

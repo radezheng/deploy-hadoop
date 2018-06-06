@@ -1,6 +1,18 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {
-    }
+  "parameters": {
+    "clientID": { "value": "kuka2" },
+    "ambariServerVMSize": { "value": "Standard_D2s_v3" },
+    "ambariServerStorageType": { "value": "Premium_LRS" },
+    "ambariServerDataDiskSize": { "value": 50 },
+    "hadoopMasterVMSize": { "value": "Standard_E64s_v3" },
+    "hadoopMasterDiskSize": { "value": 4096 },
+    "hadoopServerInstances": { "value": 5 },
+    "hadoopServerStorageAccountType": { "value": "Premium_LRS" },
+    "hadoopServerDataDiskSize": { "value": 500 },
+    "hadoopServerVMSize": { "value": "Standard_E32s_v3" }
+
+
+  }
   }
